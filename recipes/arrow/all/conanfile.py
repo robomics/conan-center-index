@@ -161,23 +161,23 @@ class ArrowConan(ConanFile):
 
     def requirements(self):
         if self.options.with_thrift:
-            self.requires("thrift/0.17.0")
+            self.requires("thrift/0.20.0")
         if self.options.with_protobuf:
             self.requires("protobuf/3.21.12")
         if self.options.with_jemalloc:
             self.requires("jemalloc/5.3.0")
         if self.options.with_mimalloc:
-            self.requires("mimalloc/1.7.6")
+            self.requires("mimalloc/1.8.2")
         if self.options.with_boost:
-            self.requires("boost/1.84.0")
+            self.requires("boost/1.85.0")
         if self.options.with_gflags:
             self.requires("gflags/2.2.2")
         if self.options.with_glog:
-            self.requires("glog/0.6.0")
+            self.requires("glog/0.7.0")
         if self.options.get_safe("with_gcs"):
-            self.requires("google-cloud-cpp/1.40.1")
+            self.requires("google-cloud-cpp/2.19.0")
         if self.options.with_grpc:
-            self.requires("grpc/1.50.0")
+            self.requires("grpc/1.54.3")
         if self._requires_rapidjson():
             self.requires("rapidjson/1.1.0")
         if self.options.with_llvm:
@@ -189,7 +189,7 @@ class ArrowConan(ConanFile):
             else:
                 self.requires("openssl/[>=1.1 <4]")
         if self.options.get_safe("with_opentelemetry"):
-            self.requires("opentelemetry-cpp/1.7.0")
+            self.requires("opentelemetry-cpp/1.14.2")
         if self.options.with_s3:
             self.requires("aws-sdk-cpp/1.9.234")
         if self.options.with_brotli:
@@ -199,10 +199,10 @@ class ArrowConan(ConanFile):
         if self.options.with_lz4:
             self.requires("lz4/1.9.4")
         if self.options.with_snappy:
-            self.requires("snappy/1.1.9")
+            self.requires("snappy/1.2.0")
         if self.options.get_safe("simd_level") != None or \
             self.options.get_safe("runtime_simd_level") != None:
-            self.requires("xsimd/9.0.1")
+            self.requires("xsimd/13.0.0")
         if self.options.with_zlib:
             self.requires("zlib/[>=1.2.11 <2]")
         if self.options.with_zstd:
@@ -210,7 +210,7 @@ class ArrowConan(ConanFile):
         if self.options.with_re2:
             self.requires("re2/20230301")
         if self.options.with_utf8proc:
-            self.requires("utf8proc/2.8.0")
+            self.requires("utf8proc/2.9.0")
         if self.options.with_backtrace:
             self.requires("libbacktrace/cci.20210118")
         if self.options.with_orc:
